@@ -9,24 +9,34 @@ dy = [0, 1, 0, -1]
 visited[r][c] = 1
 cnt = 1
 
-while 1:
-    flag = 0
-    for _ in range(4):
-        nx = r + dx[(d+3)%4]
-        ny = c + dy[(d+3)%4]
-        d = (d+3)%4
+def turn_left():
+    global d
+    d -= 1
+    if d == -1:
+        d = 3
         
-        if 0 <= nx < n and 0 <= ny < m and board[nx][ny] == 0:
-            if visited[nx][ny] == 0:
-                visited[nx][ny] = 1
-                cnt += 1
-                r = nx
-                c = ny
-                flag = 1 # 들렀다.
-                break
-    if flag == 0: # 4바퀴 돌았는데 청소할 곳이 없다면
-        if board[r - dx[d]][c - dy[d]] == 1:
-            print(cnt)
-            break
+turn_time = 0
+
+while True:
+    turn_left()
+    nx = r + dx[d]
+    ny = c + dy[d]
+    
+    if board[nx][ny] == 0 and visited[nx][ny] == 0:
+        visited[nx][ny] = 1
+        cnt += 1
+        r, c = nx, ny
+        turn_time = 0
+        continue
+    else:
+        turn_time += 1
+    if turn_time == 4:
+        nx = r - dx[d]
+        ny = c - dy[d]
+        if board[nx][ny] == 0:
+            r, c = nx, ny
         else:
-            r, c = r - dx[d], c - dy[d]
+            break
+        turn_time = 0
+
+print(cnt)
