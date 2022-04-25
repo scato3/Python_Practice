@@ -1,18 +1,25 @@
 ans = ''
-flag = 0
 word = ''
+flag = 0
 
-a = input()
-
-for i in a:
+for i in input():
     if i == '<':
         flag = 1
         ans += word[::-1]
         word = ''
         ans += i
         continue
+    elif i == '>':
+        flag = 0
+        ans += i
+        continue
     elif i == ' ':
-        ans += word[::-1]
+        ans += word[::-1] + ' '
         word = ''
         continue
-    
+    if flag:
+        ans += i
+    else:
+        word += i
+        
+print(ans + word[::-1])
