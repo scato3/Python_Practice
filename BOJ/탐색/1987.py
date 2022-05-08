@@ -1,10 +1,14 @@
-dx = [1, -1, 0, 0]
+dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
 
-R, C = map(int, input().split())
+r, c = map(int, input().split())
 
+graph = []
+for _ in range(r):
+    graph.append(input())
+    
 def bfs(x, y):
-    q = set([(0, 0, graph[0][0])])
+    q = set([(x, y, graph[x][y])])
     res = 1
     
     while q:
@@ -14,15 +18,11 @@ def bfs(x, y):
             nx = x + dx[i]
             ny = y + dy[i]
             
-            if 0 <= nx < R and 0 <= ny < C:
+            if 0 <= nx < r and 0 <= ny < c:
                 if graph[nx][ny] not in visited:
-                    next_visited = visited + graph[nx][ny]
+                    next_visited = graph[nx][ny] + visited
                     q.add((nx, ny, next_visited))
                     res = max(res, len(next_visited))
     return res
-    
-graph = []
-for _ in range(R):
-    graph.append(input())
     
 print(bfs(0, 0))
