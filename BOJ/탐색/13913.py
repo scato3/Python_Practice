@@ -19,17 +19,18 @@ def bfs():
         x = q.popleft()
         
         if x == k:
-            print(visited[x])
+            print(visited[k])
             move(x)
-            return
-
+            return 
         
-        for i in (x-1, x+1, x * 2):
+        for i in (x-1, x+1, x*2):
             if 0 <= i < 100001 and visited[i] == 0:
                 visited[i] = visited[x] + 1
-                moved[i] = x    
+                moved[i] = x
                 q.append(i)
+                
+                
 
-moved = [0] * 100001
 visited = [0] * 100001
+moved = [0] * 100001
 bfs()

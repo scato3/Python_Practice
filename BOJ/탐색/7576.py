@@ -1,39 +1,43 @@
 from collections import deque
 
-m, n = map(int, input().split())
+dx = [-1, 1, 0, 0]
+dy = [0, 0, -1, 1]
 
-board = []
-queue = deque([])
+n, m = map(int, input().split())
+graph = []
 
-for i in range(n):
-    board.append(list(map(int, input().split())))
-    for j in range(m):
-        if board[i][j] == 1:
-            queue.append([i, j])
+for _ in range(m):
+    graph.append(list(map(int, input().split())))
+    
+q = deque()
 
-dx = [1, 0, -1, 0]
-dy = [0, 1, 0, -1]
+for i in range(m):
+    for j in range(n):
+        if graph[i][j] == 1:
+            q.append((i, j))
 
 def bfs():
-    while queue:
-        x, y = queue.popleft()
+    while q:
+        x, y = q.popleft()
         
         for i in range(4):
             nx = x + dx[i]
             ny = y + dy[i]
             
-            if 0 <= nx < n and 0 <= ny < m and board[nx][ny] == 0:
-                queue.append([nx, ny])
-                board[nx][ny] = board[x][y] + 1
+            if 0 <= nx < m and 0 <= ny < n:
+                if graph[nx][ny] == 0:
+                    graph[nx][ny] = graph[x][y] + 1
+                    q.append((nx, ny))
 
 bfs()
 res = 0
 
-for i in board:
+for i in graph:
     for j in i:
         if j == 0:
             print(-1)
-            exit(0)
-    res = max(res, max(i))
+            exit()
+        else:
+            res = max(res, max(i))
 
 print(res - 1)

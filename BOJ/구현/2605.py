@@ -1,9 +1,8 @@
-t = int(input())
-num = list(map(int, input().split()))
-
+n = int(input())
+arr = list(map(int, input().split()))
 answer = []
 
-for i in range(t):
-    answer.insert(i-num[i], i+1)
-    
+for i in range(n):
+    answer.insert(i - arr[i], i+1)
+
 print(*answer)

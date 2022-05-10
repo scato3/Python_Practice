@@ -1,9 +1,11 @@
-color = ['black', 'brown', 'red', 
-'orange', 'yellow', 'green', 'blue', 'violet', 'grey', 'white']
+colors = ['black', 'brown', 'red', 'orange', 'yellow', 'green', 'blue', 'violet', 'grey', 'white']
+arr = []
+a = input()
+b = input()
+c = input()
 
-a = color.index(input())
-b = color.index(input())
-c = 10 ** color.index(input())
+arr.append(colors.index(a))
+arr.append(colors.index(b))
+arr.append(10 ** colors.index(c))
 
-print(int(str(a) + str(b)) * c)
-
+print(int(str(arr[0]) + str(arr[1])) * arr[2])

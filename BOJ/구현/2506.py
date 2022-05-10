@@ -1,14 +1,13 @@
 n = int(input())
 arr = list(map(int, input().split()))
-
-maxsum = 0
-result = 0
+temp = 0
+sum = 0
 
 for i in range(n):
     if arr[i] == 1:
-        maxsum += 1
-        result += maxsum
+       temp += arr[i]
+       sum += temp
     else:
-        maxsum = 0
-        
-print(result)
+        temp = 0
+
+print(sum)

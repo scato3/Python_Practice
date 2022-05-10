@@ -6,28 +6,26 @@ for _ in range(T):
     cmd = input()
     n = int(input())
     arr = input()[1:-1].split(',')
-    
-    queue = deque(arr)
+    q = deque(arr)
     flag = 0
     
     if n == 0:
-        queue = []
+        q = []
+    
     for i in cmd:
         if i == 'R':
             flag += 1
-        elif i == 'D':
-            if len(queue) == 0:
+        if i == 'D':
+            if len(q) == 0:
                 print('error')
                 break
+            elif flag % 2 == 0:
+                q.popleft()
             else:
-                if flag % 2 == 0:
-                    queue.popleft()
-                else:
-                    queue.pop()
+                q.pop()
     else:
-        
         if flag % 2 == 0:
-            print('[' + ','.join(queue) + ']')
+            print('[' + ','.join(q) + ']')
         else:
-            queue.reverse()
-            print('[' + ','.join(queue) + ']')
+            q.reverse()
+            print('[' + ','.join(q) + ']')

@@ -1,7 +1,8 @@
 n = int(input())
-maxsum = 0
+
+sum = 0
 
 for _ in range(n):
-    maxsum += int(input())
-    
-print(maxsum - (n - 1))
+    sum += int(input())
+
+print(sum - (n - 1))

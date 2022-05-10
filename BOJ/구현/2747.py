@@ -1,7 +1,7 @@
 n = int(input())
+arr = [0, 1]
 
-a, b = 0, 1
-for i in range(n):
-    a, b = b, a+b
+for i in range(n-1):
+    arr.append(arr[i] + arr[i+1])
 
-print(a)
+print(arr[-1])

@@ -1,10 +1,10 @@
 while True:
+    sum = 0
     a = input()
-    
     if a == '#':
         break
-    cnt = 0
     for i in a:
         if i in 'aeiouAEIOU':
-            cnt += 1
-    print(cnt)
+            sum += 1
+    
+    print(sum)

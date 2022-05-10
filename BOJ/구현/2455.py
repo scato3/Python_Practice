@@ -1,10 +1,9 @@
 people = 0
-peoples = []
-
+arr = []
 for _ in range(4):
-    off, on = map(int, input().split())
-    people += on
-    people -= off
-    peoples.append(people)
-    
-print(max(peoples))
+    a, b = map(int, input().split())
+    people += b
+    people -= a
+    arr.append(people)
+
+print(max(arr))

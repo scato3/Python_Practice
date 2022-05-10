@@ -1,9 +1,9 @@
-sum = 0
-people = []
-
-for i in range(10):
+people = 0
+arr = []
+for _ in range(10):
     a, b = map(int, input().split())
-    sum += b - a
-    people.append(sum)
-    
-print(max(people))
+    people += b
+    people -= a
+    arr.append(people)
+
+print(max(arr))

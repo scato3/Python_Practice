@@ -3,17 +3,15 @@ graph = []
 for _ in range(9):
     graph.append(list(map(int, input().split())))
     
-maxsum = 0
-x = 0
-y = 0
-    
+k = 0
+idx = []
 for i in range(9):
     for j in range(9):
-        if graph[i][j] > maxsum:
-            maxsum = graph[i][j]
-            x = i+1
-            y = j+1
-            
-print(maxsum)
-print(x, y)
+        if k < graph[i][j]:
+            k = graph[i][j]
 
+for i in range(9):
+    for j in range(9):
+        if k == graph[i][j]:
+            print(k)
+            print(i+1, j+1)
