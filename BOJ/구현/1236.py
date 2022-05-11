@@ -9,7 +9,7 @@ b = 0
 for i in range(n):
     if 'X' not in graph[i]:
         a += 1
-        
+
 for j in range(m):
     if 'X' not in (graph[i][j] for i in range(n)):
         b += 1

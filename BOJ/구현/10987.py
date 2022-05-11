@@ -1,8 +1,8 @@
 a = input()
-str = 'aeiou'
 ans = 0
 
-for i in str:
-    ans += a.count(i)
-    
+for i in a:
+    if i in 'aeiou':
+        ans += 1
+
 print(ans)

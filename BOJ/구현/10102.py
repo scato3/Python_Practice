@@ -1,9 +1,9 @@
 n = int(input())
-k = list(input())
+score = list(input())
 
-if k.count('A') > k.count('B'):
+if score.count('A') > score.count('B'):
     print('A')
-elif k.count('A') < k.count('B'):
+elif score.count('A') < score.count('B'):
     print('B')
 else:
     print('Tie')
