@@ -1,15 +1,15 @@
 arr = [int(input()) for _ in range(9)]
-
-max_sum = sum(arr)
+maxsum = sum(arr)
 
 for i in range(len(arr)):
-    for j in range(1, len(arr)):
-        if max_sum - arr[i] - arr[j] == 100:
-            first, second = arr[i], arr[j]
-arr.remove(first)
-arr.remove(second)
+    for j in range(len(arr)):
+        if maxsum - arr[i] - arr[j] == 100:
+            a = arr[i]
+            b = arr[j]
+
+arr.remove(a)
+arr.remove(b)
 arr.sort()
 
-for i in range(len(arr)):
-    print(arr[i])
-            
+for i in arr:
+    print(i)
