@@ -1,8 +1,8 @@
 n = int(input())
-arr = input()
+lst = input()
 
-if arr.count('S') == n :
+if lst.count('S') == n:
     print(n)
 else:
-    arr = arr.replace('LL', 'K')
-    print(len(arr) + 1)
+    lst = lst.replace('LL', 'K')
+    print(len(lst) + 1)

@@ -1,14 +1,15 @@
-m = int(input())
 n = int(input())
-arr = []
-i = 1
-while i ** 2 <= n:
-    if m <= i ** 2 <= n:
-        arr.append(i ** 2)
-    i += 1
+m = int(input())
 
-if len(arr) == 0:
-    print(-1) 
-else:
+i = 1
+arr = []
+while i ** 2 <= m:
+    if n <= i ** 2:
+        arr.append(i**2)
+    i+= 1
+
+if len(arr):
     print(sum(arr))
     print(min(arr))
+else:
+    print(-1)
