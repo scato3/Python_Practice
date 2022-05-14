@@ -1,8 +1,8 @@
 n = int(input())
-ans = 1
-maxsum = 0
-
-while ans * (ans +1) / 2 < n:
-    ans += 1
+i = 0
+while True:
+    i += 1
+    if (i * (i+1)) // 2 > n:
+        break
     
-print(ans - 1)
+print(i - 1)

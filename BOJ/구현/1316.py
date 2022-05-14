@@ -1,13 +1,14 @@
 n = int(input())
-result = n
-
-for i in range(n):
+res = n
+for _ in range(n):
     a = input()
-    for j in range(len(a) - 1):
-        if a[j] == a[j+1]:
-            pass 
+    
+    for i in range(len(a) - 2):
+        if a[i] == a[i+1]:
+            pass
         else:
-            if a[j] in a[j+1:]:
-                result -= 1
-                break;
-print(result)
+            if a[i] in a[i+2:]:
+                res -= 1
+                break
+
+print(res)
