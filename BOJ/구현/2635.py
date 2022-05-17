@@ -1,24 +1,21 @@
 n = int(input())
 
-max_list = []
+max = []
 
 for i in range(1, n+1):
-    list = [n]
-    list.append(i)
-    
+    arr = [n]
     idx = 1
+    arr.append(i)
     
     while True:
-        next_num = list[idx-1] - list[idx]
+        next_num = arr[idx - 1] - arr[idx]
         
         if next_num < 0:
             break
-        list.append(next_num)
+        arr.append(next_num)
         idx += 1
-        
-    if len(max_list) < len(list):
-        max_list = list
-
-print(len(max_list))
-for i in max_list:
-    print(i, end= ' ')
+    if len(max) < len(arr):
+        max = arr
+    
+print(len(max))
+print(*max)

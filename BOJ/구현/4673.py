@@ -1,8 +1,8 @@
-noselfn = set()
+arr = set()
 for i in range(1, 10001):
     i = i + sum(map(int, str(i)))
-    noselfn.add(i)
+    arr.add(i)
 
 for i in range(1, 10001):
-    if i not in noselfn:
+    if i not in arr:
         print(i)

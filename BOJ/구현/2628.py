@@ -1,27 +1,23 @@
 n, m = map(int, input().split())
-
-t = int(input())
-
-sero = [0, m]
 garo = [0, n]
+sero = [0, m]
 
-for _ in range(t):
+N = int(input())
+
+for _ in range(N):
     a, b = map(int, input().split())
     
     if a == 1:
         garo.append(b)
     else:
         sero.append(b)
-
-garo.sort()
-sero.sort()
-answer = 0
-
+        
+garo.sort(reverse=True)
+sero.sort(reverse=True)
+max = 0
 for i in range(len(sero) - 1):
     for j in range(len(garo) - 1):
-        answer = max(answer, (garo[j+1]-garo[j]) * (sero[i+1] - sero[i]))
-        
-print(answer)
-              
-        
-        
+        if (garo[j] - garo[j+1]) * (sero[i] - sero[i+1]) > max:
+            max = (garo[j] - garo[j+1]) * (sero[i] - sero[i+1])
+
+print(max)

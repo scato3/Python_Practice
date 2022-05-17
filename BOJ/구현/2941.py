@@ -1,8 +1,8 @@
-cro = ['c=', 'c-', 'dz=', 'd-', 'lj', 'nj', 's=', 'z=']
+alpha = ['c=', 'c-', 'dz=', 'd-', 'lj', 'nj', 's=', 'z=']
 
 a = input()
 
-for i in cro:
+for i in alpha:
     a = a.replace(i, '*')
-    
+
 print(len(a))
