@@ -1,35 +1,32 @@
 import sys
-input = lambda : sys.stdin.readline().strip()
 
-m = int(input())
-s = []
+n = int(sys.stdin.readline())
+arr = set()
 
-for _ in range(m):
-    a = input().split()
+for _ in range(n):
+    temp = sys.stdin.readline().strip().split()
     
-    if a[0] == 'all':
-        s.clear()
-        s = [i for i in range(1, 21)]
-        continue
-    elif a[0] == 'empty':
-        s.clear()
-        continue
-    
-    n = int(a[1])
-    if a[0] == 'add':
-        if n not in s:
-            s.append(n)
-    elif a[0] == 'remove':
-        if n in s:
-            s.remove(n)
-    elif a[0] == 'check':
-        if n in s:
-            print(1)
+    if len(temp) == 1:
+        if temp[0] == 'all':
+            arr = set([i for i in range(1, 21)])
         else:
-            print(0)
-    elif a[0] == 'toggle':
-        if n in s:
-            s.remove(n)
-        else:
-            s.append(n)
+            arr = set()
+    else:
+        k, x = temp[0], temp[1]
+        x = int(x)
         
+        if k == 'add':
+            arr.add(x)
+        elif k == 'remove':
+            arr.discard(x)
+        elif k == 'check':
+            if x in arr:
+                print(1)
+            else:
+                print(0)
+        elif k == 'toggle':
+            if x in arr:
+                arr.discard(x)
+            else:
+                arr.add(x)
+                
