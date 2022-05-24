@@ -4,4 +4,4 @@ key = n - 1
 if key % (m + 1) == 0:
     print("Can't win")
 else:
-    print('Can win')
+    print("Can win")
