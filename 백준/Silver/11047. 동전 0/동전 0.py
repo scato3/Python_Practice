@@ -1,13 +1,11 @@
 n, k = map(int, input().split())
-lst = list()
+arr = []
 for _ in range(n):
-    lst.append(int(input()))
-
-lst.sort(reverse=True)
-count = 0
-
+    arr.append(int(input()))
+arr.sort(reverse=True)
+cnt = 0
 for i in range(n):
-    count += k // lst[i]
-    k = k % lst[i]
+    cnt += k // arr[i]
+    k = k % arr[i]
 
-print(count)
+print(cnt)
