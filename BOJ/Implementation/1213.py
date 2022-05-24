@@ -1,20 +1,19 @@
-name = input()
-cnt = [0 for _ in range(26)]
-
-for i in name:
-    cnt[ord(i) - 65] += 1
+a = input()
+names = [0] * 26
+for i in a:
+    names[ord(i) - 65] += 1
 
 odd = 0
-oddName = ''
-alpha = ''
+oddname = ''
+even = ''
 
 for i in range(26):
-    if cnt[i] % 2 == 1:
+    if names[i] % 2 == 1:
         odd += 1
-        oddName += chr(i+65)
-    alpha += chr(i+65) * (cnt[i] // 2)
-    
+        oddname = chr(i + 65)
+    even += chr(i + 65) * (names[i] // 2)
+
 if odd > 1:
     print("I'm Sorry Hansoo")
 else:
-    print(alpha + oddName + alpha[::-1])
+    print(even + oddname + even[::-1])

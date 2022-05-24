@@ -21,5 +21,4 @@ for i in input():
         ans += i
     else:
         word += i
-        
-print(ans + word[::-1])
+

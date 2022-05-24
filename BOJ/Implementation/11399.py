@@ -1,10 +1,10 @@
 n = int(input())
-time = list(map(int, input().split()))
+arr = list(map(int, input().split()))
+arr.sort()
 
-time.sort()
-maxsum = 0
-for i in range(n): # 0부터 n까지 for문
-    for j in range(i+1): # 0부터 i +1 까지 for문 (즉 1 + 12 + 123 + 1234)
-        maxsum += time[j]
-        
-print(maxsum)
+sum = 0
+for i in range(n):
+    for j in range(i+1):
+        sum += arr[j]
+
+print(sum)
