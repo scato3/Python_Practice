@@ -8,7 +8,7 @@ def dp(n):
     else:
         return dp(n-3) + dp(n-2) + dp(n-1)
 
-n = int(input())
-for _ in range(n):
-    k = int(input())
-    print(dp(k))
+t = int(input())
+for _ in range(t):
+    n = int(input())
+    print(dp(n))
