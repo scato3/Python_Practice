@@ -1,5 +1,3 @@
 n = int(input())
 
-arr = list(map(int,input()))
-
-print(sum(arr))
+print(sum(map(int, input())))
