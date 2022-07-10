@@ -1,10 +1,10 @@
-# [Bronze II] 알파벳 개수 - 10808 
+# [Bronze IV] 알파벳 개수 - 10808 
 
 [문제 링크](https://www.acmicpc.net/problem/10808) 
 
 ### 성능 요약
 
-메모리: 113248 KB, 시간: 108 ms
+메모리: 30840 KB, 시간: 80 ms
 
 ### 분류
 

@@ -1,7 +1,7 @@
-s = input()
-arr = [0] * 26
+tmp = [0] * 26
+arr = input()
 
-for i in s:
-    arr[ord(i) - 97] += 1
+for i in arr:
+    tmp[ord(i) - 97] += 1
 
-print(*arr)
+print(*tmp)
