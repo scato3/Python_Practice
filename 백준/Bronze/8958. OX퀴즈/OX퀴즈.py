@@ -1,15 +1,17 @@
 n = int(input())
 
-for _ in range(n):
-    a = input()
-    sum = 0
-    score = 0
-    for i in a:
-        if i == 'O':
-            score += 1
-            sum += score
+for i in range(n):
+    OX = input()
+    lst = list(OX)
+    tmp = 0
+    ans = 0
+
+    for k in lst:
+        if k == 'O':
+            tmp += 1
+            ans += tmp
         else:
-            score = 0
-    print(sum)
-            
-            
+            tmp = 0
+    print(ans)
+
+
