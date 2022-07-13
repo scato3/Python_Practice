@@ -1,13 +1,11 @@
 n = int(input())
 
-for _ in range(n):
-    arr = []
-    students = list(map(int, input().split()))
-    avg = (sum(students[1:]) / students[0])
-    
-    for i in students[1:]:
-        if i > avg:
-            arr.append(i)
-    
-    ans = (len(arr) / students[0]) * 100
-    print(f'{ans:.3f}%')
+for i in range(n):
+    arr = list(map(int, input().split()))
+    avg = sum(arr[1:]) / arr[0]
+    tmp = 0
+    for k in arr[1:]:
+        if k > avg:
+            tmp += 1
+    per = tmp / arr[0] * 100
+    print(f'{per:.3f}%')
