@@ -1,13 +1,16 @@
-a = input().lower()
-lst = list(set(a))
+alpha = [0] * 26
+word = input().upper()
+for i in word:
+    alpha[ord(i) - 65] += 1
 
-cnt = []
+tmp = 0
+first = max(alpha)
+for i in alpha:
+    if i == first:
+        tmp += 1
 
-for i in lst:
-    cnt.append(a.count(i))
-    
-if cnt.count(max(cnt)) >= 2:
+if tmp >= 2:
     print('?')
 else:
-    idx = cnt.index(max(cnt))
-    print(lst[idx].upper())
+    print(chr(65 + alpha.index(first)))
+
