@@ -1,16 +1,14 @@
 n = int(input())
 nums = list(map(int, input().split()))
-cnt = 0
-def isPrime(n):
-    if n <= 1:
-        return 0
-    else:
-        for i in range(2, n):
-            if n % i == 0:
-                return 0
-        else:
-            return 1
+ans = 0
+for i in nums:
+    cnt = 0
+    if i == 1:
+        continue
+    for j in range(2, i+1):
+        if i % j == 0:
+            cnt += 1
+    if cnt == 1:
+        ans += 1
 
-for i in range(n):
-    cnt += isPrime(nums[i])
-print(cnt)
+print(ans)
