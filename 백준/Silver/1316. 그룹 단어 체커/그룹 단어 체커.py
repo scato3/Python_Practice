@@ -1,13 +1,14 @@
 n = int(input())
-result = n
-
+ans = 0
 for i in range(n):
     a = input()
-    for j in range(len(a) - 1):
-        if a[j] == a[j+1]:
-            pass 
-        else:
-            if a[j] in a[j+1:]:
-                result -= 1
-                break;
-print(result)
+    cnt = 0
+    for k in range(len(a) - 1):
+        if a[k] != a[k+1]:
+            tmp = a[k+1:]
+            if tmp.count(a[k]) > 0:
+                cnt += 1
+    if cnt == 0:
+        ans += 1
+
+print(ans)
