@@ -1,12 +1,13 @@
 n = int(input())
-arr = set()
+arr = []
+for i in range(n):
+    a = input()
+    arr.append(a)
 
-for _ in range(n):
-    arr.add(input())
+lst = set(arr)
+tmp = list(lst)
+tmp.sort()
+tmp.sort(key = len)
 
-arr = list(arr)
-arr.sort()
-arr.sort(key = len)
-
-for i in arr:
+for i in tmp:
     print(i)
