@@ -1,10 +1,8 @@
-n = int(input())
+n = input()
 arr = []
-
-for i in str(n):
+for i in n:
     arr.append(int(i))
-    
-arr.sort(reverse=True)
 
+arr.sort(reverse=True)
 for i in arr:
-    print(i, end='')
+    print(i,end='')
