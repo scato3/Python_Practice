@@ -1,11 +1,12 @@
 n, k = map(int, input().split())
-arr = []
-for _ in range(n):
-    arr.append(int(input()))
-arr.sort(reverse=True)
-cnt = 0
+money = []
 for i in range(n):
-    cnt += k // arr[i]
-    k = k % arr[i]
-
-print(cnt)
+    money.append(int(input()))
+ans = 0
+for i in money[::-1]:
+    cnt = 0
+    if i <= k:
+        cnt = k // i
+        k -= cnt * i
+        ans += cnt
+print(ans)
