@@ -1,15 +1,18 @@
+import sys
+
+input = sys.stdin.readline
+
 n, m = map(int, input().split())
-dic = {}
-arr = []
+dict = {}
 
 for i in range(1, n+1):
-    a = input()
-    dic[i] = a
-    dic[a] = i
+    a = input().rstrip()
+    dict[i] = a
+    dict[a] = i
 
 for i in range(m):
-    k = input()
-    if k.isdigit():
-        print(dic[int(k)])
+    ans = input().rstrip()
+    if ans.isdigit():
+        print(dict[int(ans)])
     else:
-        print(dic[k])
+        print(dict[ans])
