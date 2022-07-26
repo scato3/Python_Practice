@@ -1,10 +1,10 @@
-# [Silver V] 30 - 10610 
+# [Silver IV] 30 - 10610 
 
 [문제 링크](https://www.acmicpc.net/problem/10610) 
 
 ### 성능 요약
 
-메모리: 120476 KB, 시간: 140 ms
+메모리: 31620 KB, 시간: 100 ms
 
 ### 분류
 

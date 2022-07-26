@@ -1,14 +1,10 @@
-n = input()
-n = sorted(n, reverse=True)
+n = list(input())
+n.sort(reverse=True)
 sum = 0
-if '0' not in n:
-    print(-1)
+for i in n:
+    sum += int(i)
 
+if sum % 3 != 0 or '0' not in n:
+    print(-1)
 else:
-    for i in n:
-        sum += int(i)
-    
-    if sum % 3 != 0:
-        print(-1)
-    else:
-        print(''.join(n))
+    print(''.join(n))
