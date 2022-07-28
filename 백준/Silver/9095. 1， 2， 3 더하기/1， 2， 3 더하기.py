@@ -1,14 +1,14 @@
-def dp(n):
+n = int(input())
+def sol(n):
     if n == 1:
         return 1
-    if n == 2:
+    elif n == 2:
         return 2
-    if n == 3:
+    elif n == 3:
         return 4
     else:
-        return dp(n-3) + dp(n-2) + dp(n-1)
+        return sol(n-3) + sol(n-2) + sol(n-1)
 
-t = int(input())
-for _ in range(t):
-    n = int(input())
-    print(dp(n))
+for i in range(n):
+    k = int(input())
+    print(sol(k))
