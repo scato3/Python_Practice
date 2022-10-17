@@ -1,3 +1,7 @@
 n = int(input())
+k = list(str(input()))
+ans = 0
 
-print(sum(map(int, input())))
+for i in k:
+    ans += int(i)
+print(ans)
