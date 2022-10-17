@@ -1,13 +1,8 @@
-tmp = [0] * 10
 a = int(input())
 b = int(input())
 c = int(input())
 
-num = a * b * c
-k = str(num)
+k = list(str(a * b * c))
 
-for i in k:
-    tmp[int(i)] += 1
-
-for i in tmp:
-    print(i)
+for i in range(10):
+    print(k.count(str(i)))
