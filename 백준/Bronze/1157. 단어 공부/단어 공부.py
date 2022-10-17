@@ -1,16 +1,12 @@
-alpha = [0] * 26
-word = input().upper()
-for i in word:
-    alpha[ord(i) - 65] += 1
+k = input().lower()
+word_list = list(set(k))
+cnt = []
 
-tmp = 0
-first = max(alpha)
-for i in alpha:
-    if i == first:
-        tmp += 1
+for i in word_list:
+    count = k.count(i)
+    cnt.append(count)
 
-if tmp >= 2:
+if cnt.count(max(cnt)) >= 2:
     print('?')
 else:
-    print(chr(65 + alpha.index(first)))
-
+    print(word_list[(cnt.index(max(cnt)))].upper())
