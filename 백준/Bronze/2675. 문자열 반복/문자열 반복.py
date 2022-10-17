@@ -1,9 +1,8 @@
-t = int(input())
+n = int(input())
 
-for i in range(t):
-    num, s = input().split()
-    num = int(num)
-    text = ''
-    for k in s:
-        text += k * num
-    print(text)
+for _ in range(n):
+    a, k = input().split()
+    ans = ''
+    for i in k:
+        ans += int(a) * i
+    print(ans)
