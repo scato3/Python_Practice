@@ -1,7 +1,6 @@
-arr = ['c=', 'c-', 'dz=', 'd-', 'lj', 'nj', 's=', 'z=']
+cro = ['c=', 'c-', 'dz=', 'd-', 'lj', 'nj', 's=', 'z=']
+word = input()
 
-a = input()
-
-for i in arr:
-    a = a.replace(i, '*')
-print(len(a))
+for i in cro:
+    word = word.replace(i, '*')
+print(len(word))
