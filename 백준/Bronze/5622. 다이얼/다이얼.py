@@ -1,8 +1,9 @@
-arr = ['ABC', 'DEF', 'GHI', 'JKL', 'MNO', 'PQRS', 'TUV', 'WXYZ']
+dial = ['ABC','DEF','GHI','JKL','MNO','PQRS','TUV','WXYZ']
 a = input()
-tmp = 0
+ans = 0
 for i in range(len(a)):
-    for j in arr:
+    for j in dial:
         if a[i] in j:
-            tmp += arr.index(j) + 3
-print(tmp)
+            ans += dial.index(j) + 3
+
+print(ans)
