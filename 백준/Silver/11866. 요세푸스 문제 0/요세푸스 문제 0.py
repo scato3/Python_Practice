@@ -1,15 +1,24 @@
 from collections import deque
 
-a, b = map(int, input().split())
-q = deque()
-for i in range(1, a+1):
-    q.append(i)
+n, k = map(int, input().split())
+arr = deque([])
+
+for i in range(1, n+1):
+    arr.append(i)
+
 print('<',end='')
-while q:
-    for _ in range(b-1):
-        q.append(q[0])
-        q.popleft()
-    print(q.popleft(),end='')
-    if q:
-        print(', ',end='')
+while arr:
+    for _ in range(k-1):
+        arr.append(arr[0])
+        arr.popleft()
+    print(arr.popleft(),end='')
+    if arr:
+        print(', ', end='')
+
 print('>')
+
+
+
+
+
+
