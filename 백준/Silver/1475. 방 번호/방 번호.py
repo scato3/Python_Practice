@@ -1,5 +1,5 @@
-arr = [0] * 10
 n = input()
+arr = [0] * 10
 
 for i in range(len(n)):
     num = int(n[i])
@@ -10,4 +10,5 @@ for i in range(len(n)):
             arr[9] += 1
     else:
         arr[num] += 1
+
 print(max(arr))
