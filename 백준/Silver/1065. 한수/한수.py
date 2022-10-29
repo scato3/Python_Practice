@@ -1,11 +1,13 @@
 n = int(input())
-cnt = 0
+
+hansu = 0
 
 for i in range(1, n+1):
     if i < 100:
-        cnt += 1
+        hansu += 1
     else:
-        num = list(map(int, str(i)))
-        if num[0] - num[1] == num[1] - num[2]:
-            cnt += 1
-print(cnt)
+        num_list = list(map(int, str(i)))
+        if num_list[1] - num_list[0] == num_list[2] - num_list[1]:
+            hansu += 1
+
+print(hansu)
