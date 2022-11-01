@@ -1,12 +1,11 @@
 n = int(input())
-tmp = 666
+num = 666
 cnt = 0
 
 while True:
-    if '666' in str(tmp):
+    if '666' in str(num):
         cnt += 1
     if cnt == n:
-        print(tmp)
+        print(num)
         break
-    tmp += 1
-
+    num += 1
