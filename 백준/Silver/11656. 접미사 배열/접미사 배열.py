@@ -1,9 +1,11 @@
-s = input()
+a = input()
+
 arr = []
 
-for i in s:
-    arr.append(s)
-    s = s[1:]
-    
-for i in sorted(arr):
+for i in range(len(a)):
+    arr.append(a[i:])
+
+arr.sort()
+
+for i in arr:
     print(i)
