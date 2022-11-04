@@ -1,33 +1,29 @@
 import sys
-input = lambda : sys.stdin.readline().strip()
 
-m=int(input())
-s=[]
-for i in range(m):
-    a=input().split()
+m = int(sys.stdin.readline())
+S = set()
 
-    if a[0] == 'all':
-        s.clear()
-        s=[i for i in range(1,21)]
-        continue
-    elif a[0] == 'empty':
-        s.clear()
-        continue
-
-    num=int(a[1])
-    if a[0] == 'add':
-        if num not in s:
-            s.append(num)
-    elif a[0] == 'remove':
-        if num in s:
-            s.remove(num)
-    elif a[0] == 'check':
-        if num in s:
-            print(1)
+for _ in range(m):
+    temp = sys.stdin.readline().strip().split()
+    
+    if len(temp) == 1:
+        if temp[0] == "all":
+            S = set([i for i in range(1, 21)])
         else:
-            print(0)
-    elif a[0] == 'toggle':
-        if num in s:
-            s.remove(num)
-        else:
-            s.append(num)
+            S = set()
+    
+    else:
+        func, x = temp[0], temp[1]
+        x = int(x)
+
+        if func == "add":
+            S.add(x)
+        elif func == "remove":
+            S.discard(x)
+        elif func == "check":
+            print(1 if x in S else 0)
+        elif func == "toggle":
+            if x in S:
+                S.discard(x)
+            else:
+                S.add(x)
