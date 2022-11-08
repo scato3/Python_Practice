@@ -1,10 +1,7 @@
-n = int(input())
-arr1 = set(map(int, input().split()))
-num = int(input())
-arr2 = list(map(int, input().split()))
+N = int(input())
+A = set(map(int, input().split()))
+M = int(input())
+K = list(map(int, input().split()))
 
-for i in arr2:
-    if i in arr1:
-        print(1)
-    else:
-        print(0)
+for i in K:
+    print(1) if i in A else print(0)
