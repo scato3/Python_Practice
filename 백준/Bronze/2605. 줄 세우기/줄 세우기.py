@@ -1,8 +1,8 @@
 n = int(input())
 arr = list(map(int, input().split()))
-answer = []
-
+ans = []
 for i in range(n):
-    answer.insert(i - arr[i], i+1)
+    ans.insert(i - arr[i], i+1)
 
-print(*answer)
+for i in ans:
+    print(i,end=' ')
