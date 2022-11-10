@@ -1,6 +1,7 @@
 n = int(input())
-num = 1
+k = 1
 
-while num * (num + 1) / 2 <= n:
-    num += 1
-print(num - 1)
+while (k * (k+1)) // 2 <= n:
+    k += 1
+
+print(k - 1)
