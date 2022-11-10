@@ -1,10 +1,17 @@
-num = int(input())
+board = [300, 60, 10]
 
-if num % 10 != 0:
+n = int(input())
+ans = []
+cnt = 0
+
+if n % 10 != 0:
     print(-1)
 else:
-    a = b = c = 0
-    a = num // 300
-    b = (num % 300) // 60
-    c = (num % 300) % 60 // 10
-    print(a, b, c)
+    for i in board:
+        cnt = n // i
+        ans.append(cnt)
+        n = n % i
+
+for i in ans:
+    print(i, end=' ')
+
