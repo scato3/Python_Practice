@@ -4,11 +4,11 @@
 
 ### 성능 요약
 
-메모리: 30840 KB, 시간: 68 ms
+메모리: 113248 KB, 시간: 112 ms
 
 ### 분류
 
-구현(implementation)
+구현(implementation), 정렬(sorting)
 
 ### 문제 설명
 
