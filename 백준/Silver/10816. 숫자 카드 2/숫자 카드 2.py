@@ -1,16 +1,18 @@
-import sys
-from collections import Counter		# ** Counter 사용시 import 해줘야 함
-input = sys.stdin.readline
+from collections import Counter
 
-n = input().rstrip()
-card = list(map(int, input().split()))		# 상근이 카드
-m = input().rstrip()
-test = list(map(int, input().split()))		# 비교하고싶은 숫자
+n = int(input())
+arr1 = list(map(int, input().split()))
+m = int(input())
+arr2 = list(map(int, input().split()))
 
-cnt = Counter(card)     # Counter({10:3, 3:2, -10:2, 7:1, 6:1, 2:1})
+cnt_card = Counter(arr1)
+ans = []
 
-for i in test:						# 비교하고 싶은 숫자가
-    if i in cnt:					# cnt에 있으면
-        print(cnt[i], end=" ")
+for i in arr2:
+    if i in cnt_card:
+        ans.append(cnt_card[i])
     else:
-        print(0, end=" ")
+        ans.append(0)
+
+for i in ans:
+    print(i,end=' ')
