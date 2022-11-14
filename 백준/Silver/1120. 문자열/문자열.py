@@ -1,11 +1,11 @@
 a, b = input().split()
+ans = []
 
-answer = []
 for i in range(len(b) - len(a) + 1):
-    count = 0
+    cnt = 0
     for j in range(len(a)):
-        if a[j] != b[i + j]:
-            count += 1
-    answer.append(count)
+        if a[j] != b[i+j]:
+            cnt += 1
+    ans.append(cnt)
 
-print(min(answer))
+print(min(ans))
