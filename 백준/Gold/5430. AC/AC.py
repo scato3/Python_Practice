@@ -1,21 +1,21 @@
 from collections import deque
 
-T = int(input())
+t = int(input())
 
-for _ in range(T):
-    cmd = input()
+for _ in range(t):
+    s = input()
     n = int(input())
     arr = input()[1:-1].split(',')
+
     q = deque(arr)
     flag = 0
-    
     if n == 0:
         q = []
-    
-    for i in cmd:
+
+    for i in s:
         if i == 'R':
             flag += 1
-        if i == 'D':
+        elif i == 'D':
             if len(q) == 0:
                 print('error')
                 break
