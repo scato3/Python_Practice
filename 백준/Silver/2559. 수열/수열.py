@@ -1,10 +1,11 @@
 n, k = map(int, input().split())
 arr = list(map(int, input().split()))
-sumarr = sum(arr[:k])
-sumlist = [sumarr]
 
-for i in range(len(arr) - k):
-    sumarr = sumarr - arr[i] + arr[i+k]
-    sumlist.append(sumarr)
+temp = sum(arr[:k])
+lst = [temp]
 
-print(max(sumlist))
+for i in range(n-k):
+    temp = temp - arr[i] + arr[i+k]
+    lst.append(temp)
+
+print(max(lst))
