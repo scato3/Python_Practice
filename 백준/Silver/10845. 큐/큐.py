@@ -1,30 +1,31 @@
-from sys import stdin
+import sys
 
-n = int(stdin.readline())
-stack = []
-for i in range(n):
-    cmd = stdin.readline().split()
-    if cmd[0] == 'push':
-        stack.append(cmd[1])
-    if cmd[0] == 'pop':
-        if len(stack) == 0:
+n = int(input())
+arr = []
+for _ in range(n):
+    com = sys.stdin.readline().split()
+
+    if com[0] == 'push':
+        arr.append(com[1])
+    if com[0] == 'pop':
+        if len(arr) == 0:
             print(-1)
         else:
-            print(stack.pop(0))
-    if cmd[0] == 'size':
-        print(len(stack))
-    if cmd[0] == 'empty':
-        if len(stack) == 0:
+            print(arr.pop(0))
+    if com[0] == 'size':
+        print(len(arr))
+    if com[0] == 'empty':
+        if len(arr) == 0:
             print(1)
         else:
             print(0)
-    if cmd[0] == 'front':
-        if len(stack) == 0:
+    if com[0] == 'front':
+        if len(arr) == 0:
             print(-1)
         else:
-            print(stack[0])
-    if cmd[0] == 'back':
-        if len(stack) == 0:
+            print(arr[0])
+    if com[0] == 'back':
+        if len(arr) == 0:
             print(-1)
         else:
-            print(stack[-1])
+            print(arr[-1])
