@@ -1,19 +1,19 @@
 n = int(input())
 arr = list(map(int, input().split()))
-k = int(input())
+x = int(input())
 
 arr.sort()
-left, right = 0, n-1
-ans = 0
+cnt = 0
+left = 0
+right = n - 1
 
 while left < right:
-    tmp = arr[left] + arr[right]
-    if tmp == k :
-        ans += 1
-    if tmp < k:
+    temp = arr[left] + arr[right]
+    if temp == x:
+        cnt += 1
         left += 1
-        continue
-    right -= 1
-
-print(ans)
-
+    elif temp < x:
+        left += 1
+    else:
+        right -= 1
+print(cnt)
