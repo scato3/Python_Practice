@@ -1,8 +1,9 @@
-n = int(input())
-arr = []
-for _ in range(n):
-    arr.append(list((input().split())))
+# lambda 정렬
 
-arr.sort(key = lambda x: (-int(x[1]), int(x[2]), -int(x[3]), x[0]))
+n = int(input())
+arr = [list(input().split()) for _ in range(n)]
+
+arr.sort(key = lambda x:(-int(x[1]), int(x[2]), -int(x[3]), x[0]))
+
 for i in arr:
     print(i[0])
