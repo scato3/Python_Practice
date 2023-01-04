@@ -1,11 +1,14 @@
+# 백준 1026 보물 SILVER lV
+
 n = int(input())
+
 a = list(map(int, input().split()))
 b = list(map(int, input().split()))
-a.sort()
 ans = 0
 
-for i in range(n):
-    ans += min(a) * max(b)
-    a.pop(a.index(min(a)))
-    b.pop(b.index(max(b)))
+for _ in range(n):
+    ans += max(a) * min(b)
+    a.pop(a.index(max(a)))
+    b.pop(b.index(min(b)))
+
 print(ans)
