@@ -1,18 +1,19 @@
+# 백준 1931 회의실 배정 SILVER l
+
 n = int(input())
-room = []
+arr = []
+cnt = 0
+tmp = 0
 
 for _ in range(n):
     a, b = map(int, input().split())
-    room.append([a, b])
+    arr.append((a, b))
 
-room.sort(key = lambda x:x[0])
-room.sort(key = lambda x:x[1])
+arr.sort(key = lambda x:(x[1], x[0]))
 
-cnt = 1
-end = room[0][1]
-
-for i in range(1, n):
-    if room[i][0] >= end:
+for start, end in arr:
+    if start >= tmp:
         cnt += 1
-        end = room[i][1]
+        tmp = end
+
 print(cnt)
