@@ -1,12 +1,15 @@
+# 백준 2217 로프 SILVER lV
+# https://www.acmicpc.net/problem/2217
+
 n = int(input())
 arr = []
-ans = []
+k = []
+
 for _ in range(n):
     arr.append(int(input()))
-
 arr.sort(reverse=True)
 
 for i in range(n):
-    ans.append(arr[i] * (i+1))
+    k.append(arr[i] * (i + 1))
 
-print(max(ans))
+print(max(k))
