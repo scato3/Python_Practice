@@ -1,9 +1,12 @@
+# 백준 5585 BRONZE ll
 money = [500, 100, 50, 10, 5, 1]
-n = 1000 - int(input())
+n = int(input())
 cnt = 0
+k = 1000 - n
 
 for i in money:
-    cnt += n // i
-    n = n % i
+    if k // i > 0:
+        cnt += k // i
+        k %= i
 
 print(cnt)
