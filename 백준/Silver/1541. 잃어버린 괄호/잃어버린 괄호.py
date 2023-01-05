@@ -1,15 +1,18 @@
-n = input().split('-')
+# 백준 1541 잃어버린 괄호 SILVER ll
+
+a = input().split('-')
 arr = []
 
-for i in n:
+for i in a:
+    num = 0
     s = i.split('+')
-    cnt = 0
     for j in s:
-        cnt += int(j)
-    arr.append(cnt)
+        num += int(j)
+    arr.append(num)
 
-num = arr[0]
+ans = arr[0]
+
 for i in range(1, len(arr)):
-    num -= arr[i]
+    ans -= arr[i]
 
-print(num)
+print(ans)
