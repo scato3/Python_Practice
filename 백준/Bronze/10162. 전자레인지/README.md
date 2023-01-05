@@ -1,10 +1,10 @@
-# [Bronze III] 전자레인지 - 10162 
+# [Bronze IV] 전자레인지 - 10162 
 
 [문제 링크](https://www.acmicpc.net/problem/10162) 
 
 ### 성능 요약
 
-메모리: 113248 KB, 시간: 120 ms
+메모리: 30616 KB, 시간: 36 ms
 
 ### 분류
 
