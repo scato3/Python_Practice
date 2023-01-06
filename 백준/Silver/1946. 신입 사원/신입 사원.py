@@ -1,17 +1,25 @@
+# 백준 1946 신입 사원 SILVER l
+# https://www.acmicpc.net/problem/1946
+import sys
+input = sys.stdin.readline
+
 t = int(input())
 
 for _ in range(t):
+    arr = []
     n = int(input())
-    arr = [0] * n
-    for i in range(n):
+    for _ in range(n):
         a, b = map(int, input().split())
-        arr[i] = [a, b]
-
-    sort_arr = sorted(arr, key = lambda x:x[0])
-    ans = 1
-    temp = sort_arr[0][1]
+        arr.append((a, b))
+    arr.sort(key = lambda x:(x[0]))
+    cnt = 1
+    hired = arr[0][1]
     for i in range(1, n):
-        if sort_arr[i][1] < temp:
-            temp = sort_arr[i][1]
-            ans += 1
-    print(ans)
+        if arr[i][1] < hired:
+            hired = arr[i][1]
+            cnt += 1
+    print(cnt)
+
+
+
+
