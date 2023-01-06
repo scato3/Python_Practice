@@ -1,16 +1,18 @@
-a, b = map(int, input().split())
-r = 1
+# 백준 16953 A -> B SILVER ll
+# https://www.acmicpc.net/problem/16953
 
-while(b!=a):
-    r += 1
+a, b = map(int, input().split())
+cnt = 1
+while b != a:
+    cnt += 1
     temp = b
     if b % 10 == 1:
         b //= 10
     elif b % 2 == 0:
         b //= 2
-
     if temp == b:
         print(-1)
         break
 else:
-    print(r)
+    print(cnt)
+
