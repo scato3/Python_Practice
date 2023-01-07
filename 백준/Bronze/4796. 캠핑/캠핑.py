@@ -1,9 +1,10 @@
-i = 1
-while True:
-    a, b, c = map(int, input().split())
-    if a == 0 and b == 0 and c == 0:
-        break
-    ans = (c // b) * a + min(c % b, a)
+# 백준 4796 캠핑 BRONZE l
+# https://www.acmicpc.net/problem/4796
 
-    print('Case {}: {}'.format(i, ans))
-    i += 1
+tmp = 1
+while True:
+    L, P, V = map(int, input().split())
+    if L == 0 and P == 0 and V == 0:
+        break
+    print('Case {}: {}'.format(tmp, (V // P) * L + min(L, V % P)))
+    tmp += 1
