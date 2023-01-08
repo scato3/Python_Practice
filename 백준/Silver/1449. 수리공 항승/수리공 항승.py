@@ -1,16 +1,18 @@
-n, l = map(int, input().split())
+n, m = map(int, input().split())
 arr = list(map(int, input().split()))
 arr.sort()
-left = arr[0]
-right = arr[0] + l
+
+start = arr[0]
+end = arr[0] + m
 cnt = 1
 
 for i in range(n):
-    if left <= arr[i] < right:
+    if start <= arr[i] < end: #파이프로 다 막히는 것
         continue
     else:
-        left = arr[i]
-        right = arr[i] + l
+        start = arr[i]
+        end = arr[i] + m
         cnt += 1
 
 print(cnt)
+        
