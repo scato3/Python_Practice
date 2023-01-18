@@ -1,6 +1,9 @@
-n = int(input())
+# 백준 9095 1, 2, 3 더하기 SILVER lll
+# https://www.acmicpc.net/problem/9095
 
-def sol(n):
+tc = int(input())
+
+def dp(n):
     if n == 1:
         return 1
     if n == 2:
@@ -8,8 +11,8 @@ def sol(n):
     if n == 3:
         return 4
     else:
-        return sol(n-1) + sol(n-2) + sol(n-3)
+        return dp(n-3) + dp(n-2) + dp(n-1)
 
-for _ in range(n):
-    num = int(input())
-    print(sol(num))
+for _ in range(tc):
+    n = int(input())
+    print(dp(n))
