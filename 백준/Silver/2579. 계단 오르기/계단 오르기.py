@@ -1,13 +1,18 @@
+# 백준 2579 계단 오르기 SILVER lll
+# https://www.acmicpc.net/problem/2579
+
 n = int(input())
-arr = [0 for i in range(301)]
 dp = [0 for i in range(301)]
+s = [0 for i in range(301)]
+
 for i in range(n):
-    arr[i] = int(input())
-dp[0] = arr[0]
-dp[1] = arr[0] + arr[1]
-dp[2] = max(arr[1] + arr[2], arr[0] + arr[2])
+    s[i] = int(input())
+
+dp[0] = s[0]
+dp[1] = s[0] + s[1]
+dp[2] = max(s[0] + s[2], s[1] + s[2])
 
 for i in range(3, n):
-    dp[i] = max(dp[i-3] + arr[i-1] + arr[i], dp[i-2] + arr[i])
+    dp[i] = max(dp[i-3] + s[i-1] + s[i], dp[i-2] + s[i])
 
 print(dp[n-1])
