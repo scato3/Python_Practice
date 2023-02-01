@@ -1,13 +1,15 @@
-n = int(input())
+# 백준 1065 한수 SILVER lV
+# https://www.acmicpc.net/problem/1065
 
-hansu = 0
+n = int(input())
+ans = 0
 
 for i in range(1, n+1):
+    k = list(map(int, str(i)))
     if i < 100:
-        hansu += 1
-    else:
-        num_list = list(map(int, str(i)))
-        if num_list[1] - num_list[0] == num_list[2] - num_list[1]:
-            hansu += 1
+        ans += 1
+    elif k[0] - k[1] == k[1] - k[2]:
+        ans += 1
 
-print(hansu)
+print(ans)
+
