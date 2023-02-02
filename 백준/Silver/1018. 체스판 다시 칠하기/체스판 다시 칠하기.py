@@ -1,26 +1,28 @@
 n, m = map(int, input().split())
-graph = []
-
-for _ in range(n):
-    graph.append(input())
-   
 arr = []
-for i in range(n - 7):
-    for j in range(m - 7):
-        w_data = 0
-        b_data = 0
-        for k in range(i, i+8):
-            for l in range(j, j+8):
-                if (k + l) % 2 == 0:
-                    if graph[k][l] == 'W':
-                        w_data += 1
-                    if graph[k][l] == 'B':
-                        b_data += 1
-                else:
-                    if graph[k][l] == 'B':
-                        w_data += 1
-                    if graph[k][l] == 'W':
-                        b_data += 1
-        arr.append(min(w_data, b_data))
+cnt = []
 
-print(min(arr))
+for i in range(n):
+    arr.append(input())
+
+for a in range(n-7):
+    for b in range(m-7):
+        w_index = 0
+        b_index = 0
+
+        for i in range(a, a+8):
+            for j in range(b, b+8):
+                if (i+j) % 2 == 0:
+                    if arr[i][j] == 'B':
+                        w_index += 1
+                    else:
+                        b_index += 1
+                else:
+                    if arr[i][j] == 'B':
+                        b_index += 1
+                    else:
+                        w_index += 1
+        cnt.append(w_index)
+        cnt.append(b_index)
+
+print(min(cnt))
