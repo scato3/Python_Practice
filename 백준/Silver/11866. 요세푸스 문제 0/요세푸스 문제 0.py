@@ -1,24 +1,17 @@
 from collections import deque
 
 n, k = map(int, input().split())
-arr = deque([])
+q = deque()
+res = []
 
 for i in range(1, n+1):
-    arr.append(i)
+    q.append(i)
 
-print('<',end='')
-while arr:
-    for _ in range(k-1):
-        arr.append(arr[0])
-        arr.popleft()
-    print(arr.popleft(),end='')
-    if arr:
-        print(', ', end='')
+while q:
+    for i in range(k-1):
+        q.append(q.popleft())
+    res.append(q.popleft())
 
+print('<', end='')
+print(', '.join(map(str, res)), end='')
 print('>')
-
-
-
-
-
-
