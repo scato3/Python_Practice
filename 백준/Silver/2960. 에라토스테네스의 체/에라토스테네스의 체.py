@@ -9,3 +9,4 @@ for i in range(2, n+1):
             tmp += 1
             if tmp == k:
                 print(j)
+
