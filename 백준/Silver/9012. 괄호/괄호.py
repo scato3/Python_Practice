@@ -1,18 +1,21 @@
 n = int(input())
 
 for _ in range(n):
-    a = input()
-    s = list(a)
-    tmp = 0
-    for i in s:
+    k = input()
+    stack = []
+
+    for i in k:
         if i == '(':
-            tmp += 1
-        if i == ')':
-            tmp -= 1
-        if tmp < 0:
+            stack.append(i)
+        elif stack:
+            stack.pop()
+        else:
             print('NO')
             break
-    if tmp > 0:
-        print('NO')
-    if tmp == 0:
-        print('YES')
+    else:
+        if not stack:
+            print('YES')
+        else:
+            print('NO')
+
+
