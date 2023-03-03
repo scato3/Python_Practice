@@ -1,41 +1,38 @@
-from collections import deque
 import sys
+from collections import deque
+n = int(sys.stdin.readline())
+stack = deque()
 
-arr = deque([])
-
-for _ in range(int(input())):
+for _ in range(n):
     com = sys.stdin.readline().split()
     if com[0] == 'push_front':
-        arr.appendleft(com[1])
-    if com[0] == 'push_back':
-        arr.append(com[1])
-    if com[0] == 'pop_front':
-        if len(arr) == 0:
+        stack.appendleft(com[1])
+    elif com[0] == 'push_back':
+        stack.append(com[1])
+    elif com[0] == 'pop_front':
+        if stack:
+            print(stack.popleft())
+        else:
             print(-1)
+    elif com[0] == 'pop_back':
+        if stack:
+            print(stack.pop())
         else:
-            print(arr.popleft())
-    if com[0] == 'pop_back':
-        if len(arr) == 0:
             print(-1)
-        else:
-            print(arr.pop())
-    if com[0] == 'size':
-        print(len(arr))
-    if com[0] == 'empty':
-        if len(arr) == 0:
-            print(1)
-        else:
+    elif com[0] == 'size':
+        print(len(stack))
+    elif com[0] == 'empty':
+        if stack:
             print(0)
-    if com[0] == 'front':
-        if(len(arr)) == 0:
-            print(-1)
         else:
-            print(arr[0])
-    if com[0] == 'back':
-        if(len(arr)) == 0:
-            print(-1)
+            print(1)
+    elif com[0] == 'front':
+        if stack:
+            print(stack[0])
         else:
-            print(arr[-1])
-
-
-
+            print(-1)
+    elif com[0] == 'back':
+        if stack:
+            print(stack[-1])
+        else:
+            print(-1)
