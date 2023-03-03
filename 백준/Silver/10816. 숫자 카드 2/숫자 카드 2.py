@@ -1,18 +1,18 @@
-from collections import Counter
-
 n = int(input())
-arr1 = list(map(int, input().split()))
+arr1 = sorted(list(map(int, input().split())))
 m = int(input())
 arr2 = list(map(int, input().split()))
 
-cnt_card = Counter(arr1)
-ans = []
+cnt = {}
+
+for i in arr1:
+    if i in cnt:
+        cnt[i] += 1
+    else:
+        cnt[i] = 1
 
 for i in arr2:
-    if i in cnt_card:
-        ans.append(cnt_card[i])
+    if i in cnt:
+        print(cnt[i],end=' ')
     else:
-        ans.append(0)
-
-for i in ans:
-    print(i,end=' ')
+        print(0,end=' ')
