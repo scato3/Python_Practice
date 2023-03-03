@@ -1,22 +1,24 @@
 n = int(input())
-arr1 = []
-arr2 = []
+arr = []
+tmp = []
 cnt = 1
 temp = True
+
 for i in range(n):
-    k = int(input())
-    while cnt <= k:
-        arr1.append(cnt)
-        arr2.append('+')
+    num = int(input())
+
+    while cnt <= num:
+        arr.append(cnt)
+        tmp.append('+')
         cnt += 1
-    if arr1[-1] == k:
-        arr1.pop()
-        arr2.append('-')
+    if arr[-1] == num:
+        arr.pop()
+        tmp.append('-')
     else:
         temp = False
 
 if temp == False:
     print('NO')
 else:
-    for i in arr2:
+    for i in tmp:
         print(i)
