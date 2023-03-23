@@ -1,3 +1,3 @@
-arr = list(map(int, input().split()))
-arr.sort()
-print(arr[1])
+a = list(map(int, input().split()))
+a.sort()
+print(a[1])
