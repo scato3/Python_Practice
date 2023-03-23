@@ -1,10 +1,10 @@
 n = int(input())
 arr = []
-
-for i in range(n):
-    arr.append(list(map(int, input().split())))
+for _ in range(n):
+    a, b = map(int, input().split())
+    arr.append((a, b))
 
 arr.sort(key = lambda x:(x[0], x[1]))
 
-for i in arr:
-    print(i[0], i[1])
+for a, b in arr:
+    print(a, b)
