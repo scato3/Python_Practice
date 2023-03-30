@@ -1,9 +1,11 @@
-# lambda 정렬
-
 n = int(input())
-arr = [list(input().split()) for _ in range(n)]
+arr = []
 
-arr.sort(key = lambda x:(-int(x[1]), int(x[2]), -int(x[3]), x[0]))
+for _ in range(n):
+    a, b, c, d = map(str, input().split())
+    arr.append([a, int(b), int(c), int(d)])
+
+arr.sort(key = lambda x:(-x[1], x[2], -x[3], x[0]))
 
 for i in arr:
     print(i[0])
