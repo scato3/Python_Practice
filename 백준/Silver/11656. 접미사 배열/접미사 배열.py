@@ -1,11 +1,9 @@
-a = input()
-
+s = str(input())
 arr = []
 
-for i in range(len(a)):
-    arr.append(a[i:])
+for _ in s:
+    arr.append(s)
+    s = s[1:]
 
-arr.sort()
-
-for i in arr:
+for i in sorted(arr):
     print(i)
