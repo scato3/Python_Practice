@@ -1,4 +1,4 @@
 n, k = map(int, input().split())
-arr = list(map(int, input().split()))
-arr.sort()
+arr = sorted(list(map(int, input().split())))
+
 print(arr[k-1])
