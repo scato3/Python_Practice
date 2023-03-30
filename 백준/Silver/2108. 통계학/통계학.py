@@ -1,23 +1,34 @@
 import sys
-from collections import Counter
-n = int(sys.stdin.readline())
-li = []
+input = sys.stdin.readline
+
+n = int(input())
+arr = []
+
 for _ in range(n):
-    li.append(int(sys.stdin.readline()))
- 
-# 산술평균 - 다 더해서 / n
-print(round(sum(li)/n))
- 
-# 중앙값 - 오름차순 -> 중간값
-li.sort()
-print(li[n//2])
- 
-# 최빈값 - 빈출
-cnt_li = Counter(li).most_common()
-if len(cnt_li) > 1 and cnt_li[0][1]==cnt_li[1][1]: #최빈값 2개 이상
-    print(cnt_li[1][0])
+    arr.append(int(input()))
+
+arr.sort()
+
+print(round(sum(arr) / n))
+print(arr[n // 2])
+dic = dict()
+
+for i in arr:
+    if i in dic:
+        dic[i] += 1
+    else:
+        dic[i] = 1
+
+tmp = []
+mx = max(dic.values())
+
+for i in dic:
+    if mx == dic[i]:
+        tmp.append(i)
+
+if len(tmp) > 1:
+    print(tmp[1])
 else:
-    print(cnt_li[0][0])
- 
-# 범위 - 최댓값-최솟값
-print(max(li)-min(li))
+    print(tmp[0])
+
+print(max(arr) - min(arr))
