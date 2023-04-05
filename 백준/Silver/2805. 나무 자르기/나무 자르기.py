@@ -1,17 +1,17 @@
 n, m = map(int, input().split())
-arr = list(map(int, input().split()))
-arr.sort()
-start = 1
-end = max(arr)
+tree = list(map(int, input().split()))
+start, end = 1, max(tree)
 
 while start <= end:
     mid = (start + end) // 2
-    tree = 0
-    for i in arr:
-        if i >= mid:
-            tree += i - mid
 
-    if tree >= m:
+    log = 0
+
+    for i in tree:
+        if i >= mid:
+            log += i - mid
+
+    if log >= m:
         start = mid + 1
     else:
         end = mid - 1
