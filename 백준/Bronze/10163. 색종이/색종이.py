@@ -1,4 +1,4 @@
-arr = [[0 for _ in range(1001)] for _ in range(1001)]
+arr = [[0 for _ in range(101)] for _ in range(101)]
 
 n = int(input())
 
@@ -9,7 +9,7 @@ for k in range(1, n+1):
             arr[i][j] = k
 
 for i in range(1, n+1):
-    result = 0
+    cnt = 0
     for j in arr:
-        result += j.count(i)
-    print(result)
+        cnt += j.count(i)
+    print(cnt)
