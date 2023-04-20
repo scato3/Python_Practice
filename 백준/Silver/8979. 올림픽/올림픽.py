@@ -1,15 +1,17 @@
 n, k = map(int, input().split())
-country = []
+arr = []
+
 for _ in range(n):
-    country.append(list(map(int, input().split())))
-    
-country.sort(key=lambda x:(-x[1], -x[2], -x[3]))
+    a = list(map(int, input().split()))
+    arr.append(a)
+
+arr.sort(key = lambda x:(-x[1],-x[2],-x[3]))
 
 for i in range(n):
-    if country[i][0] == k:
+    if arr[i][0] == k:
         idx = i
-        
+
 for i in range(n):
-    if country[idx][1:] == country[i][1:]:
+    if arr[idx][1:] == arr[i][1:]:
         print(i+1)
         break
