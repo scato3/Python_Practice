@@ -2,8 +2,8 @@ n = int(input())
 arr = []
 
 for _ in range(n):
-    w, h = map(int, input().split())
-    arr.append((w, h))
+    a, b = map(int, input().split())
+    arr.append((a, b))
 
 for i in arr:
     rank = 1
