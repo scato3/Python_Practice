@@ -1,19 +1,22 @@
-# 백준 1931 회의실 배정 SILVER l
+import sys
+input=sys.stdin.readline
 
 n = int(input())
-arr = []
-cnt = 0
-tmp = 0
+time = []
 
 for _ in range(n):
-    a, b = map(int, input().split())
-    arr.append((a, b))
+    s, e = map(int, input().split())
+    time.append((s, e))
 
-arr.sort(key = lambda x:(x[1], x[0]))
+time.sort(key = lambda x: x[0])
+time.sort(key = lambda x: x[1])
 
-for start, end in arr:
-    if start >= tmp:
-        cnt += 1
-        tmp = end
+last = 0
+count = 0
 
-print(cnt)
+for i, j in time:
+    if i >= last:
+        count += 1
+        last = j
+
+print(count)
