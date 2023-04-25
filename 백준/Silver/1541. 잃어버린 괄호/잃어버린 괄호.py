@@ -1,18 +1,16 @@
-# 백준 1541 잃어버린 괄호 SILVER ll
+arr = input().split('-')
+num = []
 
-a = input().split('-')
-arr = []
+for i in arr:
+    ans = 0
+    tmp = i.split('+')
+    for j in tmp:
+        ans += int(j)
+    num.append(ans)
 
-for i in a:
-    num = 0
-    s = i.split('+')
-    for j in s:
-        num += int(j)
-    arr.append(num)
+n = num[0]
 
-ans = arr[0]
+for i in range(1, len(num)):
+    n -= num[i]
 
-for i in range(1, len(arr)):
-    ans -= arr[i]
-
-print(ans)
+print(n)
