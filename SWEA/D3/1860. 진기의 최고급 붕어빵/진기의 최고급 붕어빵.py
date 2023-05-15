@@ -2,10 +2,10 @@ t = int(input())
 
 for tc in range(1, t+1):
     n, m, k = map(int, input().split())
+    cnt = 0
     lst = list(map(int, input().split()))
     lst.sort()
 
-    cnt = 0
     ans = 'Possible'
 
     for i in lst:
@@ -14,6 +14,4 @@ for tc in range(1, t+1):
             ans = 'Impossible'
             break
 
-
     print('#{} {}'.format(tc, ans))
-
